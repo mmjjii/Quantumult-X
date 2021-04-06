@@ -58,6 +58,7 @@ $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
 $.delete("hello");
 $.delete("Hello");
 $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
+$.write("Hello2", "World");
 $.done();
 
 // prettier-ignore
