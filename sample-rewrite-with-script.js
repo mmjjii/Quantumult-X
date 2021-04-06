@@ -16,7 +16,7 @@
 //
 // You can optional change the response headers at the same time by using $done({body: modifiedBody, headers: modifiedHeaders}); only change the response headers is not allowed for script-response-body. The modifiedHeaders can be copied and modified from $response.headers, please do not change the content length, type and encoding field.
 // Response status can also be optional changed by using $done({body: modifiedBody, headers: modifiedHeaders, status: modifiedStatus}), the modifiedStatus should be like "HTTP/1.1 200 OK"
-
+/**
 var body = $response.body;
 var obj = JSON.parse(body);
 
@@ -26,3 +26,7 @@ body = JSON.stringify(obj);
 console.log(body);
 
 $done(body);
+ */
+var body = '';
+var modifiedStatus = 'HTTP/1.1 500 Internal Server Error';
+$done({body: body,status: modifiedStatus});
