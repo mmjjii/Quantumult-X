@@ -27,6 +27,14 @@ console.log(body);
 
 $done(body);
  */
-var body = '';
-var modifiedStatus = 'HTTP/1.1 500 Internal Server Error';
-$done({body: body,status: modifiedStatus});
+if ($prefs.valueForKey(time)!=0)
+{
+  var body = '';
+  var modifiedStatus = 'HTTP/1.1 500 Internal Server Error';
+  $done({body: body,status: modifiedStatus});
+}
+else
+{
+  $done({});
+  $prefs.setValueForKey(1, time);
+}
