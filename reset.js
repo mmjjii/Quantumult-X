@@ -58,7 +58,7 @@ $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
 $.delete("time");
 $.notify("已重置计数", "", "");
 $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
-var body = response.body;
+var body = $.response.body;
 $.done(body);
 
 // prettier-ignore
