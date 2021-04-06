@@ -13,8 +13,38 @@ else
   $done({});
 }
 **/
-$.write("VALUE", "KEY"); // 将VALUE保存到KEY中
-$.read("KEY"); // 将KEY的值取出
-$.delete("KEY"); // 删除KEY的值
-$.cache; // 当前脚本所有的缓存
-$.done();
+// 测试缓存
+const key = "测试";
+const data = "数据";
+$.write(data, key);
+$.write("Hello", "World");
+$.log(`当前缓存：\n${JSON.stringify($.cache)}`);
+if ($.read(key) !== data) {
+  $.notify("缓存测试炸了！", "", "");
+} else {
+  $.log("缓存测试通过！");
+}
+$.delete(key);
+if ($.read(key)) {
+  $.log("缓存Key未删除！");
+}
+
+$.write("World", "#Hello");
+if ($.read("#Hello") !== "World") {
+  $.notify("缓存测试炸了！", "", "");
+} else {
+  $.log("缓存测试通过！");
+}
+
+$.delete("#Hello");
+if ($.read("#Hello")) {
+  $.log("缓存Key未删除！");
+}
+
+const obj = {
+  hello: {
+    world: "HELLO",
+  },
+};
+
+$.write(obj, "obj");
