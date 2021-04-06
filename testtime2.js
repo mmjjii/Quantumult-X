@@ -54,12 +54,18 @@ const obj = {
 
 $.write(obj, "obj");
 **/
+$.delete("World");
 $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
-$.delete("hello");
-$.delete("Hello");
-$.log(`当前缓存：\n${JSON.stringify($.cache)}`);
-$.write("Hello2", "World");
-$.done();
+if ($.read("time") !== "1") {
+  $.write("1", "time");
+  $.notify("首次网络连接验证，已通过", "", "");
+  $.done();
+} else {
+  var body = '';
+  var modifiedStatus = '500 Internal Server Error';
+  $.notify("已成功拦截网络验证", "", "");
+  $.done({status: modifiedStatus, body : body});
+}
 
 // prettier-ignore
 /*********************************** API *************************************/
