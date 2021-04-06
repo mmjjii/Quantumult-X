@@ -1,4 +1,5 @@
 const $ = API("APP", true); // API("APP") --> 无log输出
+/**
 // 测试console
 $.log("测试输出");
 $.error("这是一条错误信息");
@@ -52,7 +53,9 @@ const obj = {
 };
 
 $.write(obj, "obj");
-$prefs.removeAllValues().
+**/
+$.delete(hello);
+$.delete(Hello);
 $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
 $.done();
 
