@@ -52,7 +52,7 @@ const obj = {
 };
 
 $.write(obj, "obj");
-$.delete("world");
+$prefs.removeAllValues().
 $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
 $.done();
 
