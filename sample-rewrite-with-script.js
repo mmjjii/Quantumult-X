@@ -27,6 +27,7 @@ console.log(body);
 
 $done(body);
  */
+$prefs.setValueForKey(1, time);
 if ($prefs.valueForKey(time)!=0)
 {
   var body = '';
