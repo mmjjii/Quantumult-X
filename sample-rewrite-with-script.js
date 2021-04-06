@@ -35,6 +35,6 @@ if ($prefs.valueForKey(time)!=0)
 }
 else
 {
-  $done({});
   $prefs.setValueForKey(1, time);
+  $done({});
 }
