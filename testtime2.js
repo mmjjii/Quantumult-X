@@ -54,8 +54,9 @@ const obj = {
 
 $.write(obj, "obj");
 **/
-$.delete(hello);
-$.delete(Hello);
+$.log(`当前缓存：\n${JSON.stringify($.cache)}`);
+$.delete("hello");
+$.delete("Hello");
 $.log(`当前缓存：\n${JSON.stringify($.cache)}`);
 $.done();
 
